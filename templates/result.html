@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Discursive formulas</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Pragmaticon 2.0</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  {%  for record in records  %}
+  <div class="container">
+      Formula: {{ ' OR '.join(record['df'].split('|')) }}
+  </div>
+<div class="container">
+    Glosses: {{ record['glosses'] }}
+</div>
+      <div class="container">
+    Language: {{ record['language'] }}
+</div>
+      <div class="container">
+    Syntax: {{ record['syntax'] }}
+</div>
+      <div class="container">
+    Primary semantics: {{ record['primary_semantics'].semantics }}
+</div>
+      <div class="container">
+    Speech act: {{ record['speech_act'].speech_act }}
+</div>
+      <div class="container">
+    Structure: {{ record['structure'] }}-part
+</div>
+    <div class="container">
+    Additional semantics:
+    {{  ' OR '.join(record['additional_semantics'])  }}
+    </div>
+      </br>
+  {% endfor %}
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.slim.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

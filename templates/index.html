@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Discursive formulas</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Pragmaticon 2.0</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+
+<form action="/result" method="GET">
+    <div class="container">
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label>Word</label>
+      <input class="form-control" name="word" placeholder="каже">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Language</label>
+        <select class="form-control" name="language">
+        <option value=""></option>
+        <option value="ru">ru</option>
+        <option value="sr">sr</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+      <div class="form-group col-md-4">
+      <label>Primary semantics</label>
+        <select class="form-control" name="pr_sem">
+        <option value=""></option>
+        <option value="amazement">amazement</option>
+        <option value="ы">ы</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Additional semantics</label>
+        <input type="checkbox" name="add_sem" value="doubt">doubt</input>
+        <input type="checkbox" name="add_sem" value="joy">joy</input>
+</input>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Speech act</label>
+        <select class="form-control" name="speech_act">
+        <option value=""></option>
+        <option value="news">news</option>
+        <option value="value judgment">value judgment</option>
+      </select>
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary ">Search!</button>
+</div>
+</form>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.slim.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
