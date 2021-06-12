@@ -1,12 +1,12 @@
-from sqlalchemy import create_engine, ForeignKey
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String
 
-from app import db
-
-engine = create_engine('postgresql+psycopg2://postgres:admin@localhost/postgres')
-
-# Base = declarative_base()
+app = Flask(__name__)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
 
 class Intonation(db.Model):

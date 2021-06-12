@@ -2,15 +2,17 @@ from typing import List
 
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.sql.expression import any_, or_
+from sqlalchemy import create_engine
+from sqlalchemy.sql.expression import any_
 from sqlalchemy.orm import sessionmaker
-from models import *
+from models import Intonation, Semantics, SpeechAct, DF
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-engine = create_engine('postgres+psycopg2://wnishjci:JtKBFR-ksN92wn6JS1PX9ZdG1Y3pj9DN@ziggy.db.elephantsql.com:5432/wnishjci')
+engine = create_engine('postgres+psycopg2://wnishjci:JtKBFR-ksN92wn6JS1PX9ZdG1Y3pj9DN@ziggy.db.elephantsql.com:5432'
+                       '/wnishjci')
 db.Model.metadata.create_all(engine)
 
 Session = sessionmaker(bind=engine)
@@ -60,7 +62,6 @@ def result():
         add_sem = all_semantics
     else:
         add_sem = any_(add_sem)
-
 
     new_query = session.query(DF)
     records = new_query.filter(DF.language == language,
